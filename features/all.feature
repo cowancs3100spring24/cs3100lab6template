@@ -4,7 +4,7 @@ Feature: Source file must be present, compilable and output correct information
 		When I run `rm ../../bin/*`
 		Then I run `cp ../../disksked.c ../../bin/`
 		Then a file named "../../bin/disksked.c" should exist
-		When I run `gcc -std=c99 -o ../../bin/disksked ../../bin/disksked.c` 
+		When I run `gcc -std=c99 -Wall -Werror -o ../../bin/disksked ../../bin/disksked.c` 
 		Then a file named "../../bin/disksked" should exist
 
 	Scenario: disksked correctly reports FCFS multiple times
